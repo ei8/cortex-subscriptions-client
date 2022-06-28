@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>disable</Nullable>
+    <AssemblyName>ei8.Cortex.Subscriptions.Client</AssemblyName>
+    <RootNamespace>ei8.Cortex.Subscriptions.Client</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="neurUL.Common.Http" Version="0.1.15" />
+    <PackageReference Include="NLog" Version="5.0.1" />
+    <PackageReference Include="Polly" Version="7.2.3" />
+    <PackageReference Include="Splat" Version="14.3.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\cortex-subscriptions-common\src\main\Common.csproj" />
+  </ItemGroup>
+
+</Project>
