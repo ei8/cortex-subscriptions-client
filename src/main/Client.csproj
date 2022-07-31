@@ -1,22 +1,23 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
-    <ImplicitUsings>enable</ImplicitUsings>
+    <TargetFramework>netstandard2.0</TargetFramework>
     <Nullable>disable</Nullable>
     <AssemblyName>ei8.Cortex.Subscriptions.Client</AssemblyName>
     <RootNamespace>ei8.Cortex.Subscriptions.Client</RootNamespace>
+    <Version>0.1.0</Version>
+    <Description>ei8 Cortex Subscriptions Client</Description>
+    <PackageProjectUrl>https://github.com/ei8/cortex-subscriptions-client</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/ei8/cortex-subscriptions-client</RepositoryUrl>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="ei8.Cortex.Subscriptions.Common" Version="0.1.0" />
     <PackageReference Include="neurUL.Common.Http" Version="0.1.15" />
     <PackageReference Include="NLog" Version="5.0.1" />
     <PackageReference Include="Polly" Version="7.2.3" />
     <PackageReference Include="Splat" Version="14.3.1" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\..\..\cortex-subscriptions-common\src\main\Common.csproj" />
   </ItemGroup>
 
 </Project>
