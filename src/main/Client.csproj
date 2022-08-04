@@ -1,19 +1,24 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
-    <Nullable>disable</Nullable>
-    <AssemblyName>ei8.Cortex.Subscriptions.Client</AssemblyName>
-    <RootNamespace>ei8.Cortex.Subscriptions.Client</RootNamespace>
-    <Version>0.1.0</Version>
-    <Description>ei8 Cortex Subscriptions Client</Description>
-    <PackageProjectUrl>https://github.com/ei8/cortex-subscriptions-client</PackageProjectUrl>
-    <RepositoryUrl>https://github.com/ei8/cortex-subscriptions-client</RepositoryUrl>
-    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+	  <TargetFramework>netstandard2.0</TargetFramework>
+	  <AssemblyName>ei8.Cortex.Subscriptions.Client</AssemblyName>
+	  <RootNamespace>ei8.Cortex.Subscriptions.Client</RootNamespace>
+	  <PackageId>ei8.Cortex.Subscriptions.Client</PackageId>
+	  <PackageVersion>0.1.0</PackageVersion>
+	  <Authors>Junvic Valdez</Authors>
+	  <Description>Cortex Subscriptions Client</Description>
+	  <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+	  <PackageReleaseNotes>Initial commit.</PackageReleaseNotes>
+	  <PackageTags>cortex subscriptions client</PackageTags>
+	  <Version>0.1.0</Version>
+	  <PackageLicenseUrl>https://www.apache.org/licenses/LICENSE-2.0</PackageLicenseUrl>
+	  <PackageProjectUrl>https://github.com/ei8/cortex-subscriptions-client</PackageProjectUrl>
+	  <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="ei8.Cortex.Subscriptions.Common" Version="0.1.0" />
+    <PackageReference Include="ei8.Cortex.Subscriptions.Common" Version="0.1.1" />
     <PackageReference Include="neurUL.Common.Http" Version="0.1.15" />
     <PackageReference Include="NLog" Version="5.0.1" />
     <PackageReference Include="Polly" Version="7.2.3" />
