@@ -1,5 +1,5 @@
 ﻿using ei8.Cortex.Subscriptions.Common;
-using ei8.Cortex.Subscriptions.Common.Attributes;
+using ei8.Cortex.Subscriptions.Common.Extensions;
 using ei8.Cortex.Subscriptions.Common.Receivers;
 using neurUL.Common.Http;
 using NLog;
@@ -7,7 +7,6 @@ using Polly;
 using Polly.Retry;
 using Splat;
 using System;
-using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -37,23 +36,10 @@ namespace ei8.Cortex.Subscriptions.Client.In
 
         private async Task AddSubscriptionInternal(string baseUrl, IAddSubscriptionReceiverRequest<T> request, CancellationToken token = default)
         {
-            var subscriptionPath = GetSubscriptionPath(request.ReceiverInfo);
+            var subscriptionPath = request.ReceiverInfo.GetSubscriptionPath();
             var requestUrl = $"{baseUrl}/subscriptions/receivers/{subscriptionPath}";
 
             await requestProvider.PostAsync(requestUrl, request);
-        }
-
-        private string GetSubscriptionPath(IReceiverInfo request)
-        {
-            var type = request.GetType();
-            var subscriptionPathAttribute = type.GetCustomAttributes(typeof(SubscriptionPathAttribute), false)
-                                                .FirstOrDefault() as SubscriptionPathAttribute;
-
-            if (subscriptionPathAttribute != null)
-                return subscriptionPathAttribute.EndpointPath;
-
-            else
-                throw new ArgumentException($"Unsupported receiver info type: {type.FullName}");
         }
     }
 }
