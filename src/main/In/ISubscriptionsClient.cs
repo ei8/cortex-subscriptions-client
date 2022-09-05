@@ -5,8 +5,8 @@ using System.Threading.Tasks;
 
 namespace ei8.Cortex.Subscriptions.Client.In
 {
-    public interface ISubscriptionsClient<T> where T : IReceiverInfo
+    public interface ISubscriptionsClient 
     {
-        Task AddSubscription(string baseUrl, IAddSubscriptionReceiverRequest<T> request, CancellationToken token = default);
+        Task AddSubscription<T>(string baseUrl, IAddSubscriptionReceiverRequest<T> request, CancellationToken token = default) where T : IReceiverInfo;
     }
 }
