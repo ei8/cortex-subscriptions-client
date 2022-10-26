@@ -34,6 +34,19 @@ namespace ei8.Cortex.Subscriptions.Client.In
             await ExponentialRetry.ExecuteAsync(async () => await AddSubscriptionInternal(baseUrl, request, token).ConfigureAwait(false));
         }
 
+        public async Task SendNotificationToUser(string baseUrl, string targetUserNeuronId, NotificationPayloadRequest request, CancellationToken token = default)
+        {
+            await ExponentialRetry.ExecuteAsync(async () =>  await SendNotificationToUserInternal(baseUrl, targetUserNeuronId, request, token)
+                                  .ConfigureAwait(false));
+        }
+
+        private async Task SendNotificationToUserInternal(string baseUrl, string targetUserNeuronId, NotificationPayloadRequest request, CancellationToken token = default)
+        {
+            var requestUrl = $"{baseUrl}/notify/{targetUserNeuronId}";
+
+            await requestProvider.PostAsync(requestUrl, request);
+        }
+
         private async Task AddSubscriptionInternal<T>(string baseUrl, IAddSubscriptionReceiverRequest<T> request, CancellationToken token = default) where T : IReceiverInfo
         {
             var subscriptionPath = request.ReceiverInfo.GetSubscriptionPath();
