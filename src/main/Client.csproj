@@ -5,13 +5,13 @@
 	  <AssemblyName>ei8.Cortex.Subscriptions.Client</AssemblyName>
 	  <RootNamespace>ei8.Cortex.Subscriptions.Client</RootNamespace>
 	  <PackageId>ei8.Cortex.Subscriptions.Client</PackageId>
-	  <PackageVersion>0.1.7</PackageVersion>
+	  <PackageVersion>0.1.8</PackageVersion>
 	  <Authors>Junvic Valdez</Authors>
 	  <Description>Cortex Subscriptions Client</Description>
 	  <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
 	  <PackageReleaseNotes>Initial commit.</PackageReleaseNotes>
 	  <PackageTags>cortex subscriptions client</PackageTags>
-	  <Version>0.1.7</Version>
+	  <Version>0.1.8</Version>
 	  <PackageLicenseUrl>https://www.apache.org/licenses/LICENSE-2.0</PackageLicenseUrl>
 	  <PackageProjectUrl>https://github.com/ei8/cortex-subscriptions-client</PackageProjectUrl>
 	  <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
@@ -19,7 +19,7 @@
 
   <ItemGroup>
     <PackageReference Include="ei8.Cortex.Subscriptions.Common" Version="0.1.5" />
-    <PackageReference Include="neurUL.Common.Http" Version="0.1.15" />
+    <PackageReference Include="neurUL.Common.Http" Version="0.2.0" />
     <PackageReference Include="NLog" Version="5.0.1" />
     <PackageReference Include="Polly" Version="7.2.3" />
     <PackageReference Include="Splat" Version="14.3.1" />
